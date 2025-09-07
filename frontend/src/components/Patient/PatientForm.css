@@ -1,0 +1,290 @@
+.patient-form-container {
+  min-height: calc(100vh - 80px);
+  padding: 2rem;
+  background-color: #f8f9fa;
+}
+
+.patient-form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.patient-form-card h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2c3e50;
+}
+
+.patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #34495e;
+}
+
+.form-group input,
+.form-group select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.form-group input[readonly] {
+  background-color: #f8f9fa;
+  color: #6c757d;
+}
+
+.form-group input.error,
+.form-group select.error {
+  border-color: #e74c3c;
+  background-color: #fdf2f2;
+}
+
+.validation-error {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.field-hint {
+  color: #6c757d;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+  display: block;
+  font-style: italic;
+  line-height: 1.3;
+}
+
+.field-hint::before {
+  content: "💡 ";
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.submit-button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #229954;
+}
+
+.submit-button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  background-color: #27ae60;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.trial-info-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.trial-info-content h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.trial-info-content p {
+  margin: 0.25rem 0;
+  opacity: 0.95;
+}
+
+.trial-info-content p:last-child {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+.trial-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0.75rem 0;
+}
+
+.trial-detail {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+  .trial-details {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
+/* Success Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(4px);
+}
+
+.success-modal {
+  background: white;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  animation: modalSlideIn 0.3s ease-out;
+}
+
+@keyframes modalSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modal-content {
+  text-align: center;
+}
+
+.success-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.success-modal h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.success-modal p {
+  color: #7f8c8d;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.modal-trial-info {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+  border-left: 4px solid #27ae60;
+}
+
+.modal-trial-info p {
+  margin: 0.5rem 0;
+  color: #2c3e50;
+}
+
+.modal-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.modal-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(102, 126, 234, 0.3);
+}
+
+.modal-button:active {
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .success-modal {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+  
+  .success-modal h3 {
+    font-size: 1.25rem;
+  }
+}

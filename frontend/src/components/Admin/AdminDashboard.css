@@ -1,0 +1,135 @@
+.admin-dashboard {
+  padding: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.dashboard-header {
+  margin-bottom: 2rem;
+}
+
+.dashboard-header h2 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.dashboard-header p {
+  color: #7f8c8d;
+  margin: 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.1rem;
+  color: #7f8c8d;
+}
+
+.no-patients {
+  text-align: center;
+  padding: 3rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #7f8c8d;
+  font-size: 1.1rem;
+}
+
+.patients-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+}
+
+.patients-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.patients-table th,
+.patients-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ecf0f1;
+}
+
+.patients-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+  color: #2c3e50;
+  position: sticky;
+  top: 0;
+}
+
+.patients-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.eligibility-status {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.eligibility-status.accepted {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.eligibility-status.rejected {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.eligibility-status.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.check-eligibility-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background-color 0.2s;
+}
+
+.check-eligibility-btn:hover:not(:disabled) {
+  background-color: #2980b9;
+}
+
+.check-eligibility-btn:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.error-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 0.75rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .admin-dashboard {
+    padding: 1rem;
+  }
+  
+  .patients-table-container {
+    font-size: 0.875rem;
+  }
+  
+  .patients-table th,
+  .patients-table td {
+    padding: 0.5rem;
+  }
+}

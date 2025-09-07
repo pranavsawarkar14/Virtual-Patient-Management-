@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Patient Form</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+  <div class="form-container">
+    <h2>Clinical Trial Patient Form</h2>
+    <form method="POST" id="patientForm">
+      <input type="number" name="Age" placeholder="Age" required>
+      <select name="Sex" required>
+        <option value="">Sex</option>
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+      </select>
+      <input type="number" step="0.1" name="Weight_kg" placeholder="Weight (kg)" required>
+      <input type="number" step="0.1" name="Height_cm" placeholder="Height (cm)" required>
+      <input type="number" step="0.1" name="BMI" placeholder="BMI" required>
+      <select name="Cohort" required>
+        <option value="0">Placebo</option>
+        <option value="1">Dose 1</option>
+        <option value="2">Dose 2</option>
+        <option value="3">Dose 3</option>
+      </select>
+      <input type="number" step="0.1" name="ALT" placeholder="ALT" required>
+      <input type="number" step="0.1" name="Creatinine" placeholder="Creatinine" required>
+      <input type="number" name="SBP" placeholder="Systolic BP" required>
+      <input type="number" name="DBP" placeholder="Diastolic BP" required>
+      <input type="number" name="HR" placeholder="Heart Rate" required>
+      <input type="number" step="0.1" name="Temp_C" placeholder="Temperature (°C)" required>
+      <select name="AdverseEvent" required>
+        <option value="0">No Adverse Event</option>
+        <option value="1">Adverse Event</option>
+      </select>
+      <button type="submit" class="btn">Submit</button>
+    </form>
+  </div>
+</body>
+</html>

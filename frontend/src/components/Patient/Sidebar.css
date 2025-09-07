@@ -1,0 +1,306 @@
+/* Patient Sidebar Styles */
+.patient-sidebar {
+  width: 280px;
+  background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.patient-sidebar.mobile {
+  top: 60px;
+  height: calc(100vh - 60px);
+}
+
+.patient-sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.patient-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.brand-text {
+  transition: opacity 0.3s ease;
+}
+
+.brand-text h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.brand-text span {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.patient-sidebar.collapsed .brand-text {
+  opacity: 0;
+}
+
+.sidebar-toggle {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.sidebar-close {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-close:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-close svg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Navigation Styles */
+.sidebar-nav {
+  flex: 1;
+  padding: 1rem 0;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin-bottom: 0.5rem;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  position: relative;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateX(4px);
+}
+
+.nav-link.active {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-left: 4px solid #ffd700;
+  transform: translateX(4px);
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  height: 0;
+  border-left: 8px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.nav-label {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.patient-sidebar.collapsed .nav-link {
+  padding: 1rem;
+  justify-content: center;
+  margin: 0.5rem;
+}
+
+.patient-sidebar.collapsed .nav-label {
+  display: none;
+}
+
+.patient-sidebar.collapsed .nav-link.active {
+  border-left: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.patient-sidebar.collapsed .nav-link.active::before {
+  display: none;
+}
+
+/* Sidebar Footer */
+.sidebar-footer {
+  padding: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.patient-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-avatar {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.profile-role {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.logout-btn {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.logout-btn svg {
+  width: 18px;
+  height: 18px;
+}
+
+.patient-sidebar.collapsed .logout-btn {
+  justify-content: center;
+}
+
+.patient-sidebar.collapsed .logout-btn span {
+  display: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .patient-sidebar {
+    transform: translateX(-100%);
+    width: 280px;
+    transition: transform 0.3s ease;
+  }
+
+  .patient-sidebar:not(.collapsed) {
+    transform: translateX(0);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .patient-sidebar.collapsed {
+    transform: translateX(-100%);
+    width: 280px;
+  }
+}
+
+@media (min-width: 769px) {
+  .patient-sidebar {
+    transform: translateX(0);
+    top: 0;
+    height: 100vh;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .patient-sidebar {
+    width: 260px;
+  }
+}

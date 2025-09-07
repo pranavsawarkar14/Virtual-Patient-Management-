@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Admin Dashboard</h2>
+    <table>
+      <tr>
+        <th>ID</th><th>Age</th><th>Sex</th><th>Weight</th><th>Height</th>
+        <th>BMI</th><th>Cohort</th><th>ALT</th><th>Creatinine</th>
+        <th>SBP</th><th>DBP</th><th>HR</th><th>Temp</th><th>AE</th><th>Eligibility</th><th>Action</th>
+      </tr>
+      {% for p in patients %}
+      <tr>
+        <td>{{ p.id }}</td>
+        <td>{{ p.Age }}</td>
+        <td>{{ p.Sex }}</td>
+        <td>{{ p.Weight_kg }}</td>
+        <td>{{ p.Height_cm }}</td>
+        <td>{{ p.BMI }}</td>
+        <td>{{ p.Cohort }}</td>
+        <td>{{ p.ALT }}</td>
+        <td>{{ p.Creatinine }}</td>
+        <td>{{ p.SBP }}</td>
+        <td>{{ p.DBP }}</td>
+        <td>{{ p.HR }}</td>
+        <td>{{ p.Temp_C }}</td>
+        <td>{{ p.AdverseEvent }}</td>
+        <td>{{ p.eligibility }}</td>
+        <td><a href="{{ url_for('check', patient_id=p.id) }}" class="btn">Check</a></td>
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>
