@@ -3,21 +3,31 @@ from flask_cors import CORS
 import joblib, numpy as np
 import mysql.connector
 from flask_bcrypt import Bcrypt
+import os
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+app.secret_key = "supersecretkey"  # In production, use environment variable
 bcrypt = Bcrypt(app)
-CORS(app, supports_credentials=True, origins=["http://localhost:3000"])
+
+# Configure CORS for production
+CORS(app, supports_credentials=True, origins=[
+    "http://localhost:3000",
+    "https://your-render-frontend-url.onrender.com"  # Add your Render frontend URL when available
+])
 
 # Load model
 model = joblib.load("general_model.pkl")
 
+# Database configuration
+db_config = {
+    "host": os.getenv("DB_HOST", "localhost"),
+    "user": os.getenv("DB_USER", "root"),
+    "password": os.getenv("DB_PASSWORD", "Pranav@7756"),
+    "database": os.getenv("DB_NAME", "clinical_trial")
+}
+
 # Connect MySQL
-db = mysql.connector.connect(
-    host="localhost",
-    user="root",
-    password="Pranav@7756",
-    database="clinical_trial"
+db = mysql.connector.connect(**db_config)
 )
 cursor = db.cursor(dictionary=True)
 
